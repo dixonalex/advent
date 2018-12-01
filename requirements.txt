@@ -1,0 +1,14 @@
+appdirs==1.4.3
+atomicwrites==1.2.1
+attrs==18.2.0
+black==18.9b0
+Click==7.0
+dataclasses==0.6
+Inject==3.4.0
+more-itertools==4.3.0
+pluggy==0.8.0
+py==1.7.0
+pytest==4.0.1
+PyYAML==3.13
+six==1.11.0
+toml==0.10.0
