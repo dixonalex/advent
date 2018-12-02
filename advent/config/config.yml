@@ -1,2 +1,4 @@
 day_1:
     input: '/home/alexanderldixon/projects/advent/static/day_1_input.txt'
+day_2:
+    input: '/home/alexanderldixon/projects/advent/static/day_2_input.txt'
