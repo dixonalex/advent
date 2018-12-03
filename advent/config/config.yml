@@ -1,4 +1,3 @@
-day_1:
-    input: '/home/alexanderldixon/projects/advent/static/day_1_input.txt'
-day_2:
-    input: '/home/alexanderldixon/projects/advent/static/day_2_input.txt'
+day_1: '/home/alexanderldixon/projects/advent/static/day_1_input.txt'
+day_2: '/home/alexanderldixon/projects/advent/static/day_2_input.txt'
+day_3: '/home/alexanderldixon/projects/advent/static/day_3_input.txt'

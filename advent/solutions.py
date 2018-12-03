@@ -1,4 +1,4 @@
-from advent import Config
+from advent import Config, Claim
 import collections
 import inject
 import itertools
@@ -9,7 +9,7 @@ class Solutions:
     cfg = inject.attr(Config)
 
     def device_readings(self) -> [int]:
-        with open(self.cfg.day_1["input"], "r") as f:
+        with open(self.cfg.day_1, "r") as f:
             for s in f.readlines():
                 yield int(s)
 
@@ -39,7 +39,7 @@ class Solutions:
     def day_2(self) -> int:
         """Get the rudimentary checksum for day 2 challenge"""
         counter = collections.Counter()
-        with open(self.cfg.day_2["input"], "r") as f:
+        with open(self.cfg.day_2, "r") as f:
             lines = f.readlines()
         for l in lines:
             chars = set(l)
@@ -60,4 +60,24 @@ class Solutions:
                 break
         part_1 = counter[2] * counter[3]
 
+        return part_1, part_2
+
+    def day_3(self) -> (int, int):
+        with open(self.cfg.day_3, "r") as f:
+            lines = f.readlines()
+        claims = [Claim.from_elf(line) for line in lines]
+        unused_claims = {c.id for c in claims}
+        used_cells = set()
+        for this, that in itertools.combinations(claims, 2):
+            potential = this.coordinates.intersection(that.coordinates)
+            if potential:
+                try:
+                    unused_claims.discard(this.id)
+                    unused_claims.discard(that.id)
+                except KeyError:
+                    pass
+                used_cells.update(potential)
+
+        part_1 = len(used_cells)
+        part_2 = unused_claims
         return part_1, part_2
